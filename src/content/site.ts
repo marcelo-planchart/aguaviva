@@ -57,6 +57,8 @@ export const projects: Project[] = [
       "A brand identity and a cultural-article website for a legendary Puerto Rican film house — an editorial archive of its work, from cinema to music video, told with journalistic weight.",
     accent: "#b4551f",
     accentSoft: "#f0d9c4",
+    image: "/work/zapatero.jpg",
+    imageAlt: "Still from El Apagón — a warm-lit character portrait",
   },
   {
     slug: "suelo",
