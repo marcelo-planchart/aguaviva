@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/*
+  Aguaviva — white-wall gallery
+  Warm off-white walls, near-black ink, the work provides the color.
+  "aguaviva" = jellyfish / living water: fluid, organic, elegant.
+*/
+
+@theme {
+  /* Gallery walls & ink */
+  --color-wall: #f6f4ef; /* warm off-white canvas */
+  --color-wall-raised: #ffffff; /* cards / raised surfaces */
+  --color-ink: #16181d; /* primary text */
+  --color-ink-dim: #6a7077; /* secondary text */
+  --color-line: #e4e1d8; /* hairlines / borders */
+
+  /* Deep sea accent — used sparingly for CTAs & links */
+  --color-tide: #0f6f63;
+  --color-tide-deep: #0a4d45;
+
+  /* Bioluminescent aqua — accent on the single dark band only */
+  --color-glow: #7fe3d1;
+
+  /* A single dark band (footer / contact) */
+  --color-deep: #14181a;
+
+  /* Typography */
+  --font-display: var(--font-display), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-tide) 22%, transparent);
+  color: var(--color-ink);
+}
+
+/* Jellyfish mark: source PNG is white line-art on transparent.
+   .mark--ink renders it near-black for light walls; default stays white. */
+.mark--ink {
+  filter: brightness(0) saturate(100%);
+}
+
+/* Gentle, disciplined drift — "alive, not chaotic". Off for reduced motion. */
+@keyframes jelly-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(1deg);
+  }
+}
+.jelly-float {
+  animation: jelly-float 7s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .jelly-float {
+    animation: none;
+  }
+}
