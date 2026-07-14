@@ -82,6 +82,9 @@ export const projects: Project[] = [
       "A full brand ecosystem for a Puerto Rican motorcycle marque — naming, a complete voice system built around “Va contigo,” and a site made to sell dealers, not units.",
     accent: "#1f4f7a",
     accentSoft: "#cfdcea",
+    // Drop the real Veloce still at public/work/veloce.jpg, then uncomment:
+    // image: "/work/veloce.jpg",
+    // imageAlt: "Veloce motorcycle — studio still",
   },
   {
     slug: "e19",
