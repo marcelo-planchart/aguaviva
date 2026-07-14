@@ -31,9 +31,6 @@ export const metadata: Metadata = {
     siteName: "Aguaviva",
     type: "website",
   },
-  icons: {
-    icon: "/brand/aguaviva-logo.png",
-  },
 };
 
 export default function RootLayout({
