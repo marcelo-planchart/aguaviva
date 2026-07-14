@@ -9,29 +9,54 @@ function Plate({ project, featured = false }: { project: Project; featured?: boo
         featured ? "md:col-span-2" : "",
       ].join(" ")}
     >
-      {/* Gallery frame — organic accent wash stands in for real imagery. */}
+      {/* Gallery frame — a real still when provided, else an organic accent wash. */}
       <div
         className={featured ? "relative aspect-[16/9]" : "relative aspect-[4/3]"}
-        style={{
-          background: `radial-gradient(120% 120% at 15% 0%, ${project.accentSoft} 0%, #faf8f4 60%)`,
-        }}
+        style={
+          project.image
+            ? undefined
+            : {
+                background: `radial-gradient(120% 120% at 15% 0%, ${project.accentSoft} 0%, #faf8f4 60%)`,
+              }
+        }
       >
-        <div
-          aria-hidden
-          className="absolute inset-0 opacity-90 mix-blend-multiply"
-          style={{
-            background: `radial-gradient(80% 100% at 85% 100%, ${project.accent}33 0%, transparent 60%)`,
-          }}
-        />
+        {project.image ? (
+          <>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={project.image}
+              alt={project.imageAlt ?? `${project.title} — selected work`}
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"
+            />
+          </>
+        ) : (
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-90 mix-blend-multiply"
+            style={{
+              background: `radial-gradient(80% 100% at 85% 100%, ${project.accent}33 0%, transparent 60%)`,
+            }}
+          />
+        )}
         <div className="absolute inset-0 flex items-end p-6">
           <span
             className="font-display text-4xl leading-none tracking-tight md:text-5xl"
-            style={{ color: project.accent }}
+            style={{ color: project.image ? "#ffffff" : project.accent }}
           >
             {project.title}
           </span>
         </div>
-        <span className="absolute right-5 top-5 text-xs uppercase tracking-[0.18em] text-ink-dim">
+        <span
+          className={[
+            "absolute right-5 top-5 text-xs uppercase tracking-[0.18em]",
+            project.image ? "text-white/80" : "text-ink-dim",
+          ].join(" ")}
+        >
           {project.year}
         </span>
       </div>

@@ -40,6 +40,10 @@ export type Project = {
   accent: string;
   accentSoft: string;
   href?: string;
+  // Optional real still. Local path ("/work/zapatero.jpg") or full URL.
+  // When set, it replaces the color plate. Drop one in per project.
+  image?: string;
+  imageAlt?: string;
 };
 
 export const projects: Project[] = [
