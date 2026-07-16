@@ -3,12 +3,12 @@ import { contact, site } from "@/content/site";
 
 export function Contact() {
   return (
-    <section id="contact" className="scroll-mt-16 bg-deep text-wall">
+    <section id="contact" className="scroll-mt-16 bg-deep text-white">
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         <div className="grid gap-12 md:grid-cols-12 md:items-end">
           <div className="md:col-span-8">
-            <p className="mb-4 text-xs uppercase tracking-[0.22em] text-white/45">
-              04 — {contact.eyebrow}
+            <p className="mb-4 text-xs uppercase tracking-[0.28em] text-white/45">
+              {contact.eyebrow}
             </p>
             <h2 className="font-display text-5xl leading-[1.02] tracking-tight md:text-6xl">
               {contact.headline}

@@ -47,6 +47,28 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "rainao",
+    title: "Rainao",
+    client: "Artista independiente",
+    category: "Dirección de arte",
+    year: "2025",
+    blurb:
+      "Una landing conceptual que junta los links dispersos de un artista en un solo lugar, con dirección de arte — pequeña en alcance, precisa en sensación.",
+    accent: "#5b4b8a",
+    accentSoft: "#d9d2ec",
+  },
+  {
+    slug: "catori",
+    title: "Catori",
+    client: "Joyería",
+    category: "Marca y web",
+    year: "2026",
+    blurb:
+      "Refresh de marca y una experiencia web a medida para una casa de joyería ética — oro, plata y bronce 100% reciclados. Un mundo visual entre lo místico y lo premium; una transformación digital para su flagship de e-commerce.",
+    accent: "#7a6a34",
+    accentSoft: "#e6dcbf",
+  },
+  {
     slug: "zapatero",
     title: "Zapatero Films",
     client: "Kacho López",
@@ -58,18 +80,6 @@ export const projects: Project[] = [
     accentSoft: "#f0d9c4",
     image: "/work/zapatero.jpg",
     imageAlt: "Fotograma de El Apagón — un retrato de personaje con luz cálida",
-  },
-  {
-    slug: "suelo",
-    title: "Suelo",
-    client: "suelo.mx",
-    category: "Marca y web",
-    year: "2026",
-    blurb:
-      "Identidad y un sitio cinematográfico que convierte una práctica personal de restauración en una casa de bienes raíces — bilingüe, con la imagen al frente, y una experiencia interactiva para inversionistas.",
-    accent: "#9a6b3f",
-    accentSoft: "#ecdcc6",
-    href: "https://suelo.mx",
   },
   {
     slug: "veloce",
@@ -84,28 +94,6 @@ export const projects: Project[] = [
     // Suelta el still real de Veloce en public/work/veloce.jpg y descomenta:
     // image: "/work/veloce.jpg",
     // imageAlt: "Motora Veloce — still de estudio",
-  },
-  {
-    slug: "e19",
-    title: "E19",
-    client: "Elite Drafting & Design",
-    category: "Marca y web",
-    year: "2025",
-    blurb:
-      "Marca y un sitio de generación de leads para una firma de ingeniería del vidrio — credibilidad técnica hecha legible, con herramientas de take-off automáticas como gancho.",
-    accent: "#2b6f6a",
-    accentSoft: "#cfe3e0",
-  },
-  {
-    slug: "rainado",
-    title: "Rainado",
-    client: "Artista independiente",
-    category: "Dirección de arte",
-    year: "2025",
-    blurb:
-      "Una landing conceptual que junta los links dispersos de un artista en un solo lugar, con dirección de arte — pequeña en alcance, precisa en sensación.",
-    accent: "#5b4b8a",
-    accentSoft: "#d9d2ec",
   },
 ];
 

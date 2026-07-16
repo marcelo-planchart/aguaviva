@@ -1,31 +1,29 @@
 @import "tailwindcss";
 
 /*
-  Aguaviva — galería en blanco y negro
-  Papel blanco, tinta casi negra, grises elegidos. Sin color de acento:
-  el énfasis lo cargan el peso, el tamaño y el negro puro.
-  "aguaviva" = agua viva / medusa: orgánica, elegante.
+  Aguaviva — portfolio oscuro y tipográfico (ref. gougoucore.com)
+  Carbón, gris, y tipografía enorme. Sin color de acento: el énfasis lo
+  cargan el peso, el tamaño y el contraste. "aguaviva" = agua viva / medusa.
 */
 
 @theme {
-  /* Papel y tinta */
-  --color-wall: #ffffff; /* papel */
-  --color-wall-raised: #ffffff; /* superficies */
-  --color-plate: #f4f4f2; /* plate neutro para la galería */
-  --color-ink: #101010; /* texto primario */
-  --color-ink-dim: #6f6f6f; /* texto secundario (gris elegido, leve calidez) */
-  --color-line: #e6e5e2; /* hairlines / bordes */
+  /* Carbón y foreground */
+  --color-wall: #191919; /* fondo carbón */
+  --color-wall-raised: #232322; /* superficies */
+  --color-plate: #242422; /* plate neutro */
+  --color-ink: #ededea; /* texto primario (casi blanco) */
+  --color-ink-dim: #9a9a95; /* gris (~gougou #A2A2A2) */
+  --color-line: #333330; /* hairlines / bordes */
 
-  /* Sin acento cromático: "tide" = negro; "glow" = blanco.
-     Mantiene las utilidades existentes pero en clave B/N. */
-  --color-tide: #101010;
-  --color-tide-deep: #000000;
+  /* Sin acento cromático: "tide" ~ foreground; "glow" ~ blanco */
+  --color-tide: #ededea;
+  --color-tide-deep: #ffffff;
   --color-glow: #ffffff;
 
-  /* Banda oscura (contacto / footer): negro puro */
+  /* Banda de contacto: negro puro */
   --color-deep: #000000;
 
-  /* Tipografía */
+  /* Tipografía: display serif + grotesca */
   --font-display: var(--font-display), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
@@ -54,11 +52,10 @@ body {
 }
 
 ::selection {
-  background: #101010;
-  color: #ffffff;
+  background: #ededea;
+  color: #191919;
 }
 
-/* Deriva suave y disciplinada de la medusa. Off con reduced-motion. */
 @keyframes jelly-float {
   0%,
   100% {

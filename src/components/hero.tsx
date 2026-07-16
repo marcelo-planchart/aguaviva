@@ -23,13 +23,13 @@ export function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               href={hero.ctaPrimary.href}
-              className="bg-ink px-7 py-3 text-sm font-medium tracking-wide text-white transition-opacity hover:opacity-80"
+              className="bg-ink px-7 py-3 text-sm font-medium tracking-wide text-wall transition-opacity hover:opacity-80"
             >
               {hero.ctaPrimary.label}
             </Link>
             <Link
               href={hero.ctaSecondary.href}
-              className="border border-ink px-7 py-3 text-sm font-medium tracking-wide text-ink transition-colors hover:bg-ink hover:text-white"
+              className="border border-line px-7 py-3 text-sm font-medium tracking-wide text-ink transition-colors hover:border-ink hover:bg-ink hover:text-wall"
             >
               {hero.ctaSecondary.label}
             </Link>

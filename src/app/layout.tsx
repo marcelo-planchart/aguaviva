@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Fraunces, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -9,7 +9,7 @@ const fraunces = Fraunces({
   axes: ["opsz", "SOFT", "WONK"],
 });
 
-const inter = Inter({
+const grotesk = Space_Grotesk({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${grotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-wall text-ink">
         {children}

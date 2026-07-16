@@ -5,8 +5,8 @@ export function Studio() {
   return (
     <section id="studio" className="scroll-mt-16 border-t border-line">
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <p className="mb-4 text-xs uppercase tracking-[0.22em] text-ink-dim">
-          03 — {studio.eyebrow}
+        <p className="mb-4 text-xs uppercase tracking-[0.28em] text-ink-dim">
+          {studio.eyebrow}
         </p>
 
         <div className="grid gap-14 md:grid-cols-12">

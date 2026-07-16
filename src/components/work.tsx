@@ -1,78 +1,49 @@
 import Link from "next/link";
 import { projects, type Project } from "@/content/site";
 
-function Plate({ project, featured = false }: { project: Project; featured?: boolean }) {
+function Row({ project, index }: { project: Project; index: number }) {
   const inner = (
-    <article
-      className={[
-        "group relative flex flex-col overflow-hidden border border-line bg-wall-raised transition-colors duration-300 hover:border-ink",
-        featured ? "md:col-span-2" : "",
-      ].join(" ")}
-    >
-      {/* Marco de galería — still real en B/N cuando existe, si no un plate neutro. */}
-      <div
-        className={[
-          "relative",
-          featured ? "aspect-[16/9]" : "aspect-[4/3]",
-          project.image ? "" : "bg-plate",
-        ].join(" ")}
-      >
-        {project.image ? (
-          <>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={project.image}
-              alt={project.imageAlt ?? `${project.title} — trabajo seleccionado`}
-              className="absolute inset-0 h-full w-full object-cover grayscale"
-              loading="lazy"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"
-            />
-          </>
-        ) : null}
-        <div className="absolute inset-0 flex items-end p-6">
-          <span
-            className={[
-              "font-display text-4xl leading-none tracking-tight md:text-5xl",
-              project.image ? "text-white" : "text-ink",
-            ].join(" ")}
-          >
-            {project.title}
-          </span>
-        </div>
-        <span
-          className={[
-            "absolute right-5 top-5 text-xs uppercase tracking-[0.18em] tabular-nums",
-            project.image ? "text-white/80" : "text-ink-dim",
-          ].join(" ")}
-        >
-          {project.year}
+    <div className="group flex items-center justify-between gap-6 border-b border-line py-7 md:py-9">
+      <div className="flex min-w-0 items-baseline gap-4 md:gap-6">
+        <span className="text-xs tabular-nums text-ink-dim">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <span className="truncate font-display text-4xl uppercase tracking-tight text-ink-dim transition-colors duration-300 group-hover:text-ink md:text-6xl">
+          {project.title}
         </span>
       </div>
 
-      <div className="flex flex-1 flex-col p-6">
-        <div className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-ink-dim">
-          <span>{project.category}</span>
-          <span className="text-line">/</span>
-          <span>{project.client}</span>
-        </div>
-        <p className="text-[15px] leading-relaxed text-ink-dim">{project.blurb}</p>
-        {project.href ? (
-          <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-ink underline decoration-line decoration-1 underline-offset-4 group-hover:decoration-ink">
-            Ver sitio
-            <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
-              →
-            </span>
-          </span>
+      <div className="flex shrink-0 items-center gap-5">
+        {project.image ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={project.image}
+            alt=""
+            aria-hidden
+            className="hidden h-14 w-24 object-cover opacity-0 grayscale transition-opacity duration-300 group-hover:opacity-100 md:block"
+            loading="lazy"
+          />
         ) : null}
+        <div className="hidden text-right sm:block">
+          <div className="text-xs uppercase tracking-[0.16em] text-ink-dim">
+            {project.category}
+          </div>
+          <div className="mt-1 text-xs tabular-nums text-ink-dim">
+            {project.year} · {project.client}
+          </div>
+        </div>
+        <span
+          aria-hidden
+          className="text-ink-dim transition-all duration-300 group-hover:translate-x-1 group-hover:text-ink"
+        >
+          →
+        </span>
       </div>
-    </article>
+    </div>
   );
 
   return project.href ? (
-    <Link href={project.href} target="_blank" rel="noopener noreferrer" className={featured ? "md:col-span-2" : ""}>
+    <Link href={project.href} target="_blank" rel="noopener noreferrer" aria-label={project.title}>
       {inner}
     </Link>
   ) : (
@@ -81,27 +52,23 @@ function Plate({ project, featured = false }: { project: Project; featured?: boo
 }
 
 export function Work() {
-  const [featured, ...rest] = projects;
   return (
-    <section id="work" className="scroll-mt-16 border-t border-line">
+    <section id="work" className="border-t border-line">
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="mb-14 flex items-end justify-between gap-6">
-          <div>
-            <p className="mb-4 text-xs uppercase tracking-[0.22em] text-ink-dim">
-              01 — Trabajo seleccionado
-            </p>
-            <h2 className="font-display text-4xl tracking-tight md:text-5xl">
-              Unos pocos, escogidos a mano.
-            </h2>
-          </div>
+        <div className="mb-12 flex items-baseline justify-between">
+          <p className="text-xs uppercase tracking-[0.28em] text-ink-dim">Trabajo</p>
+          <p className="text-xs uppercase tracking-[0.28em] text-ink-dim tabular-nums">
+            {String(projects.length).padStart(2, "0")} proyectos
+          </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          <Plate project={featured} featured />
-          {rest.map((p) => (
-            <Plate key={p.slug} project={p} />
+        <ul className="border-t border-line">
+          {projects.map((p, i) => (
+            <li key={p.slug}>
+              <Row project={p} index={i} />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

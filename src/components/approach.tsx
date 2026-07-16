@@ -6,8 +6,8 @@ export function Approach() {
       <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
         <div className="grid gap-14 md:grid-cols-12">
           <div className="md:col-span-5">
-            <p className="mb-4 text-xs uppercase tracking-[0.22em] text-ink-dim">
-              02 — {approach.eyebrow}
+            <p className="mb-4 text-xs uppercase tracking-[0.28em] text-ink-dim">
+              {approach.eyebrow}
             </p>
             <h2 className="font-display text-4xl leading-tight tracking-tight md:text-5xl">
               {approach.headline}
