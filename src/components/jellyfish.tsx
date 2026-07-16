@@ -14,7 +14,7 @@ export function Jellyfish({
   className = "",
   float = false,
 }: Props) {
-  const color = tone === "white" ? "#f6f4ef" : "#16181d";
+  const color = tone === "white" ? "#ffffff" : "#101010";
   return (
     <svg
       width={size}

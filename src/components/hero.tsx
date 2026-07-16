@@ -5,16 +5,6 @@ import { hero } from "@/content/site";
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
-      {/* Organic "current": a soft, disciplined gradient wash behind the mark. */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-40 -top-32 h-[38rem] w-[38rem] rounded-full opacity-60 blur-3xl"
-        style={{
-          background:
-            "radial-gradient(circle at 50% 50%, rgba(127,227,209,0.35), rgba(15,111,99,0.10) 55%, transparent 72%)",
-        }}
-      />
-
       <div className="relative mx-auto grid max-w-6xl gap-12 px-6 pb-24 pt-20 md:grid-cols-12 md:pb-32 md:pt-28">
         <div className="md:col-span-8">
           <p className="mb-6 flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-ink-dim">
@@ -33,13 +23,13 @@ export function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               href={hero.ctaPrimary.href}
-              className="rounded-full bg-tide px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-tide-deep"
+              className="bg-ink px-7 py-3 text-sm font-medium tracking-wide text-white transition-opacity hover:opacity-80"
             >
               {hero.ctaPrimary.label}
             </Link>
             <Link
               href={hero.ctaSecondary.href}
-              className="rounded-full border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink"
+              className="border border-ink px-7 py-3 text-sm font-medium tracking-wide text-ink transition-colors hover:bg-ink hover:text-white"
             >
               {hero.ctaSecondary.label}
             </Link>

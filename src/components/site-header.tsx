@@ -25,7 +25,7 @@ export function SiteHeader() {
 
         <Link
           href={hero.ctaPrimary.href}
-          className="rounded-full bg-tide px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-tide-deep"
+          className="bg-ink px-4 py-2 text-sm font-medium tracking-wide text-white transition-opacity hover:opacity-80"
         >
           {hero.ctaPrimary.label}
         </Link>

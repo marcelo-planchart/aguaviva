@@ -18,7 +18,7 @@ export function Approach() {
           </div>
 
           <div className="md:col-span-7">
-            <dl className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
+            <dl className="grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2">
               {approach.services.map((s) => (
                 <div key={s.title} className="bg-wall-raised p-7">
                   <dt className="font-display text-2xl tracking-tight">{s.title}</dt>

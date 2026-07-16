@@ -20,9 +20,9 @@ export function Contact() {
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
                 href={`mailto:${site.emailPrimary}`}
-                className="rounded-full bg-glow px-6 py-3 text-sm font-semibold text-deep transition-colors hover:bg-white"
+                className="bg-white px-7 py-3 text-sm font-semibold tracking-wide text-deep transition-opacity hover:opacity-80"
               >
-                Let’s talk
+                Hablemos
               </a>
               <a
                 href={`mailto:${site.emailPrimary}`}

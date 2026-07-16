@@ -1,30 +1,31 @@
 @import "tailwindcss";
 
 /*
-  Aguaviva — white-wall gallery
-  Warm off-white walls, near-black ink, the work provides the color.
-  "aguaviva" = jellyfish / living water: fluid, organic, elegant.
+  Aguaviva — galería en blanco y negro
+  Papel blanco, tinta casi negra, grises elegidos. Sin color de acento:
+  el énfasis lo cargan el peso, el tamaño y el negro puro.
+  "aguaviva" = agua viva / medusa: orgánica, elegante.
 */
 
 @theme {
-  /* Gallery walls & ink */
-  --color-wall: #f6f4ef; /* warm off-white canvas */
-  --color-wall-raised: #ffffff; /* cards / raised surfaces */
-  --color-ink: #16181d; /* primary text */
-  --color-ink-dim: #6a7077; /* secondary text */
-  --color-line: #e4e1d8; /* hairlines / borders */
+  /* Papel y tinta */
+  --color-wall: #ffffff; /* papel */
+  --color-wall-raised: #ffffff; /* superficies */
+  --color-plate: #f4f4f2; /* plate neutro para la galería */
+  --color-ink: #101010; /* texto primario */
+  --color-ink-dim: #6f6f6f; /* texto secundario (gris elegido, leve calidez) */
+  --color-line: #e6e5e2; /* hairlines / bordes */
 
-  /* Deep sea accent — used sparingly for CTAs & links */
-  --color-tide: #0f6f63;
-  --color-tide-deep: #0a4d45;
+  /* Sin acento cromático: "tide" = negro; "glow" = blanco.
+     Mantiene las utilidades existentes pero en clave B/N. */
+  --color-tide: #101010;
+  --color-tide-deep: #000000;
+  --color-glow: #ffffff;
 
-  /* Bioluminescent aqua — accent on the single dark band only */
-  --color-glow: #7fe3d1;
+  /* Banda oscura (contacto / footer): negro puro */
+  --color-deep: #000000;
 
-  /* A single dark band (footer / contact) */
-  --color-deep: #14181a;
-
-  /* Typography */
+  /* Tipografía */
   --font-display: var(--font-display), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
@@ -53,17 +54,11 @@ body {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--color-tide) 22%, transparent);
-  color: var(--color-ink);
+  background: #101010;
+  color: #ffffff;
 }
 
-/* Jellyfish mark: source PNG is white line-art on transparent.
-   .mark--ink renders it near-black for light walls; default stays white. */
-.mark--ink {
-  filter: brightness(0) saturate(100%);
-}
-
-/* Gentle, disciplined drift — "alive, not chaotic". Off for reduced motion. */
+/* Deriva suave y disciplinada de la medusa. Off con reduced-motion. */
 @keyframes jelly-float {
   0%,
   100% {

@@ -5,55 +5,46 @@ function Plate({ project, featured = false }: { project: Project; featured?: boo
   const inner = (
     <article
       className={[
-        "group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-wall-raised transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_-32px_rgba(20,24,26,0.35)]",
+        "group relative flex flex-col overflow-hidden border border-line bg-wall-raised transition-colors duration-300 hover:border-ink",
         featured ? "md:col-span-2" : "",
       ].join(" ")}
     >
-      {/* Gallery frame — a real still when provided, else an organic accent wash. */}
+      {/* Marco de galería — still real en B/N cuando existe, si no un plate neutro. */}
       <div
-        className={featured ? "relative aspect-[16/9]" : "relative aspect-[4/3]"}
-        style={
-          project.image
-            ? undefined
-            : {
-                background: `radial-gradient(120% 120% at 15% 0%, ${project.accentSoft} 0%, #faf8f4 60%)`,
-              }
-        }
+        className={[
+          "relative",
+          featured ? "aspect-[16/9]" : "aspect-[4/3]",
+          project.image ? "" : "bg-plate",
+        ].join(" ")}
       >
         {project.image ? (
           <>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={project.image}
-              alt={project.imageAlt ?? `${project.title} — selected work`}
-              className="absolute inset-0 h-full w-full object-cover"
+              alt={project.imageAlt ?? `${project.title} — trabajo seleccionado`}
+              className="absolute inset-0 h-full w-full object-cover grayscale"
               loading="lazy"
             />
             <div
               aria-hidden
-              className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"
+              className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"
             />
           </>
-        ) : (
-          <div
-            aria-hidden
-            className="absolute inset-0 opacity-90 mix-blend-multiply"
-            style={{
-              background: `radial-gradient(80% 100% at 85% 100%, ${project.accent}33 0%, transparent 60%)`,
-            }}
-          />
-        )}
+        ) : null}
         <div className="absolute inset-0 flex items-end p-6">
           <span
-            className="font-display text-4xl leading-none tracking-tight md:text-5xl"
-            style={{ color: project.image ? "#ffffff" : project.accent }}
+            className={[
+              "font-display text-4xl leading-none tracking-tight md:text-5xl",
+              project.image ? "text-white" : "text-ink",
+            ].join(" ")}
           >
             {project.title}
           </span>
         </div>
         <span
           className={[
-            "absolute right-5 top-5 text-xs uppercase tracking-[0.18em]",
+            "absolute right-5 top-5 text-xs uppercase tracking-[0.18em] tabular-nums",
             project.image ? "text-white/80" : "text-ink-dim",
           ].join(" ")}
         >
@@ -69,7 +60,7 @@ function Plate({ project, featured = false }: { project: Project; featured?: boo
         </div>
         <p className="text-[15px] leading-relaxed text-ink-dim">{project.blurb}</p>
         {project.href ? (
-          <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-tide">
+          <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-ink underline decoration-line decoration-1 underline-offset-4 group-hover:decoration-ink">
             Ver sitio
             <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
               →
