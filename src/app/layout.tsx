@@ -18,15 +18,15 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://aguaviva.ai"),
   title: {
-    default: "Aguaviva — Boutique creative studio",
+    default: "Aguaviva — Estudio de cultura y crecimiento",
     template: "%s · Aguaviva",
   },
   description:
-    "Aguaviva is a boutique creative studio. We build brands and campaigns with a human voice — fewer things, done properly.",
+    "Aguaviva es un estudio creativo boutique. Hacemos marcas y campañas con voz humana — menos cosas, bien hechas.",
   openGraph: {
-    title: "Aguaviva — Boutique creative studio",
+    title: "Aguaviva — Estudio de cultura y crecimiento",
     description:
-      "A boutique creative studio building brands and campaigns with a human voice.",
+      "Un estudio creativo boutique que hace marcas y campañas con voz humana.",
     url: "https://aguaviva.ai",
     siteName: "Aguaviva",
     type: "website",
@@ -40,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="es"
       className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-wall text-ink">

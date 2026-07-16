@@ -23,7 +23,7 @@ export function Studio() {
 
           <div className="md:col-span-5">
             <div className="flex items-start justify-between">
-              <h3 className="text-xs uppercase tracking-[0.2em] text-ink-dim">Team</h3>
+              <h3 className="text-xs uppercase tracking-[0.2em] text-ink-dim">Equipo</h3>
               <Jellyfish size={44} tone="ink" className="opacity-60" />
             </div>
             <ul className="mt-6 divide-y divide-line border-y border-line">

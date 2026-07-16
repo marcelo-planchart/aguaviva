@@ -33,7 +33,7 @@ export function SiteFooter() {
       </div>
       <div className="mx-auto max-w-6xl px-6 pb-8">
         <p className="text-xs text-ink-dim">
-          © {year} {site.name}. Living water. Made properly.
+          © {year} {site.name}. Agua viva. Bien hecho.
         </p>
       </div>
     </footer>

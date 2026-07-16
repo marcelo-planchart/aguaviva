@@ -70,7 +70,7 @@ function Plate({ project, featured = false }: { project: Project; featured?: boo
         <p className="text-[15px] leading-relaxed text-ink-dim">{project.blurb}</p>
         {project.href ? (
           <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-tide">
-            Visit site
+            Ver sitio
             <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
               →
             </span>
@@ -97,10 +97,10 @@ export function Work() {
         <div className="mb-14 flex items-end justify-between gap-6">
           <div>
             <p className="mb-4 text-xs uppercase tracking-[0.22em] text-ink-dim">
-              01 — Selected work
+              01 — Trabajo seleccionado
             </p>
             <h2 className="font-display text-4xl tracking-tight md:text-5xl">
-              A hand-picked few.
+              Unos pocos, escogidos a mano.
             </h2>
           </div>
         </div>
