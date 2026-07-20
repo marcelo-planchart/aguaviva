@@ -13,7 +13,6 @@ export const site = {
 
 export const nav = [
   { label: "Trabajo", href: "#work" },
-  { label: "Enfoque", href: "#approach" },
   { label: "Estudio", href: "#studio" },
   { label: "Contacto", href: "#contact" },
 ] as const;
