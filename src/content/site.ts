@@ -42,6 +42,11 @@ export type Project = {
   // Cuando existe, reemplaza el plate de color. Se suelta uno por proyecto.
   image?: string;
   imageAlt?: string;
+  // Video opcional. Ruta local ("/work/veloce.mp4") o URL completa.
+  // Cuando existe, reemplaza a la imagen: se reproduce en silencio, en loop.
+  // Usa `image` como poster (primer fotograma) mientras carga.
+  video?: string;
+  videoAlt?: string;
 };
 
 export const projects: Project[] = [
@@ -93,6 +98,10 @@ export const projects: Project[] = [
     // Suelta el still real de Veloce en public/work/veloce.jpg y descomenta:
     // image: "/work/veloce.jpg",
     // imageAlt: "Motora Veloce — still de estudio",
+    // O suelta un clip corto en silencio en public/work/veloce.mp4 y descomenta.
+    // `image` (arriba) sirve de poster mientras carga el video.
+    // video: "/work/veloce.mp4",
+    // videoAlt: "Motora Veloce — clip de estudio",
   },
 ];
 

@@ -14,7 +14,19 @@ function Row({ project, index }: { project: Project; index: number }) {
       </div>
 
       <div className="flex shrink-0 items-center gap-5">
-        {project.image ? (
+        {project.video ? (
+          <video
+            src={project.video}
+            poster={project.image}
+            aria-hidden
+            className="hidden h-14 w-24 object-cover object-right opacity-70 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 md:block"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          />
+        ) : project.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={project.image}
