@@ -20,7 +20,7 @@ function Row({ project, index }: { project: Project; index: number }) {
             src={project.image}
             alt=""
             aria-hidden
-            className="hidden h-14 w-24 object-cover opacity-0 grayscale transition-opacity duration-300 group-hover:opacity-100 md:block"
+            className="hidden h-14 w-24 object-cover object-right opacity-70 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 md:block"
             loading="lazy"
           />
         ) : null}
